@@ -1,6 +1,6 @@
 # SymptAid-Response
-**A Medical Java Application**
-*Created at StuyHacks VII*
+**A Medical Java Application**\
+*Created at StuyHacks VII*\
 *By James Rupa & Jonathan Lee*
 
 ## Reason for Application
@@ -12,9 +12,9 @@ Using databases full of medical problems and symptoms, we have combined this wit
 the symptoms and give a diagnosis, and later on, to be able to contact 911 as quick as possible.
 
 ## How to use SymptAid-Response
-Input the symptom that the patient is experiencing.
+Input the symptom that the patient is experiencing.\
 The user will receive an output with a diagnosis.
 
 ## Future Plans
-Being able to use it as a mobile application.
+Being able to use it as a mobile application.\
 Improve the design of the UI.
