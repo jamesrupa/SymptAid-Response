@@ -1,3 +1,5 @@
+package src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -63,8 +65,6 @@ public class Main extends JFrame implements ActionListener, KeyListener {
         frame.add(panel,BorderLayout.CENTER);
         frame.setVisible(true);
 
-        if (input.equals("chest pain"))
-            response = "MEDICAL ATTENTION. Possible risk of HEART ATTACK.";
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -88,34 +88,6 @@ public class Main extends JFrame implements ActionListener, KeyListener {
     }
 
     public static void main(final String[] args) {
-
-        /*
-        boolean Emergency = false;
-        boolean Urgent = false;
-        boolean Minor = false;
-        int count = 0;
-        int flag = 1;
-
-
-        String symptom;
-        String[] symptomArray;
-
-        String[] EmergencySymptoms = {"cant breathe", "quick breaths", "short breaths",
-        "fatigue", "cold sweat", "chest pain", "stiff muscles", "blind", "blurred vision",
-        "double vision", "vertigo", "numb"};
-        String EmergencyString = Arrays.toString(EmergencySymptoms).replace("null", "").replace
-        ("[","").replace(",","").replace("]","").trim();
-
-        String[] UrgentSymptoms = {"blister", "swelling", "melting skin"};
-        String UrgentString = Arrays.toString(UrgentSymptoms).replace("null", "").replace
-        ("[","").replace(",","").replace("]","").trim();
-
-        String[] MinorSymptoms = {"sneezing", "coughing", "cough", "sore throat"};
-        String MinorString = Arrays.toString(MinorSymptoms).replace("null", "").replace
-        ("[","").replace(",","").replace("]","").trim();
-
-        */
-
         new Main();
     }
 }
