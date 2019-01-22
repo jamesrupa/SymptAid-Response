@@ -1,7 +1,13 @@
 # SymptAid-Response
+<<<<<<< HEAD
 **A Medical Java Application**
 *Created at StuyHacks VII*\
 *By James Rupa & Jonathan Lee*\
+=======
+**A Medical Java Application**\
+*Created at StuyHacks VII*\
+*By James Rupa & Jonathan Lee*
+>>>>>>> origin
 
 ## Reason for Application
 As Eagle Scouts that are required to know what actions to take in case of medical emergency,
