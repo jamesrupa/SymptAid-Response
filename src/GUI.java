@@ -6,9 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Arrays;
 
-public class Main extends JFrame implements ActionListener, KeyListener {
+public class GUI extends JFrame implements ActionListener, KeyListener {
 
     public JFrame frame;
     public JPanel panel;
@@ -21,13 +20,7 @@ public class Main extends JFrame implements ActionListener, KeyListener {
     public static String answer;
     public static String response;
 
-
-    public Main() {
-        GUI();
-    }
-
-    public void GUI(){
-
+    public void GUI() {
         // JAVA WINDOW
         frame = new JFrame("SymptAid Response");
         frame.setSize(900,350);
@@ -44,13 +37,13 @@ public class Main extends JFrame implements ActionListener, KeyListener {
         button.addActionListener(this);
         // JAVA LABELS
         label = new JLabel("Name of Symptom: ");
-        label.setFont(new Font("Verdana", Font.BOLD,22));
+        label.setFont(new Font("Verdana",Font.BOLD,22));
         name = new JLabel("SymptAid Response");
         name.setFont(new Font("Verdana",Font.BOLD,52));
 
         // JAVA INPUT
-        textField=new JTextField();
-        textField.setPreferredSize(new Dimension(150, 25));
+        textField = new JTextField();
+        textField.setPreferredSize(new Dimension(150,25));
         textField.addKeyListener(this);
 
         ImageIcon logo = new ImageIcon("img/firstaidedit.png");
@@ -64,30 +57,27 @@ public class Main extends JFrame implements ActionListener, KeyListener {
         panel.add(button);
         frame.add(panel,BorderLayout.CENTER);
         frame.setVisible(true);
-
     }
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
             input = textField.getText();
-            JOptionPane.showMessageDialog(null, response);
+            JOptionPane.showMessageDialog(null,response);
             System.exit(0);
         }
     }
+
     public void keyTyped(KeyEvent e) {
     }
+
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             button.doClick();
             input = textField.getText();
-            JOptionPane.showMessageDialog(null, response);
+            JOptionPane.showMessageDialog(null,response);
         }
     }
 
     public void keyReleased(KeyEvent e) {
-    }
-
-    public static void main(final String[] args) {
-        new Main();
     }
 }
