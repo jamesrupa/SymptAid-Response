@@ -1,6 +1,7 @@
 package src;
 
 import javax.swing.*;
+import javax.xml.ws.Response;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,8 +20,10 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
     public static String input;
     public static String answer;
     public static String response;
+    private Object KeyStrokes;
 
-    public void GUI() {
+    public GUI() {
+
         // JAVA WINDOW
         frame = new JFrame("SymptAid Response");
         frame.setSize(900,350);
@@ -46,12 +49,12 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
         textField.setPreferredSize(new Dimension(150,25));
         textField.addKeyListener(this);
 
-        ImageIcon logo = new ImageIcon("img/firstaidedit.png");
-        logo1 = new JLabel(logo);
+        //ImageIcon logo = new ImageIcon("img/firstaidedit.png");
+        //logo1 = new JLabel(logo);
 
         // IMPLEMENTS
         panel.add(name);
-        panel.add(logo1);
+        //panel.add(logo1);
         panel.add(label);
         panel.add(textField);
         panel.add(button);
@@ -61,9 +64,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
-            input = textField.getText();
-            JOptionPane.showMessageDialog(null,response);
-            System.exit(0);
+            Response();
         }
     }
 
@@ -73,11 +74,18 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             button.doClick();
-            input = textField.getText();
-            JOptionPane.showMessageDialog(null,response);
+            Response();
         }
     }
 
     public void keyReleased(KeyEvent e) {
     }
+
+    public void Response(){
+        input = textField.getText();
+        if (input == "bad"){
+            JOptionPane.showMessageDialog(null, "Seek Medical Attention");
+        }
+    }
+
 }
