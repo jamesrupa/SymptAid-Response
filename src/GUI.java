@@ -1,7 +1,6 @@
 package src;
 
 import javax.swing.*;
-import javax.xml.ws.Response;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,12 +48,12 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
         textField.setPreferredSize(new Dimension(150,25));
         textField.addKeyListener(this);
 
-        //ImageIcon logo = new ImageIcon("img/firstaidedit.png");
-        //logo1 = new JLabel(logo);
+        ImageIcon logo = new ImageIcon("img/firstaid.png");
+        logo1 = new JLabel(logo);
 
         // IMPLEMENTS
         panel.add(name);
-        //panel.add(logo1);
+        panel.add(logo1);
         panel.add(label);
         panel.add(textField);
         panel.add(button);
@@ -68,14 +67,13 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
         }
     }
 
-    public void keyTyped(KeyEvent e) {
-    }
-
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            button.doClick();
             Response();
         }
+    }
+
+    public void keyTyped(KeyEvent e) {
     }
 
     public void keyReleased(KeyEvent e) {
@@ -83,7 +81,7 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
 
     public void Response(){
         input = textField.getText();
-        if (input == "bad"){
+        if (input.equals("bad")){
             JOptionPane.showMessageDialog(null, "Seek Medical Attention");
         }
     }
