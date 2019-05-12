@@ -4,22 +4,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
-public class GUI extends JFrame implements ActionListener, KeyListener {
+public class GUI extends JFrame implements ActionListener {
+
+    ImageIcon logo = new ImageIcon("img/logo.png");
 
     public JFrame frame;
     public JPanel panel;
     public JButton button;
     public JLabel label;
-    public JLabel logo1;
+    public JLabel IMG;
     public JTextField textField;
     public JLabel name;
     public static String input;
-    public static String answer;
-    public static String response;
-    private Object KeyStrokes;
 
     public GUI() {
 
@@ -46,14 +43,13 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
         // JAVA INPUT
         textField = new JTextField();
         textField.setPreferredSize(new Dimension(150,25));
-        textField.addKeyListener(this);
 
-        ImageIcon logo = new ImageIcon("img/firstaid.png");
-        logo1 = new JLabel(logo);
+        ImageIcon img = new ImageIcon("img/firstaid.png");
+        IMG = new JLabel(img);
 
         // IMPLEMENTS
         panel.add(name);
-        panel.add(logo1);
+        panel.add(IMG);
         panel.add(label);
         panel.add(textField);
         panel.add(button);
@@ -67,22 +63,12 @@ public class GUI extends JFrame implements ActionListener, KeyListener {
         }
     }
 
-    public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            Response();
-        }
-    }
-
-    public void keyTyped(KeyEvent e) {
-    }
-
-    public void keyReleased(KeyEvent e) {
-    }
-
     public void Response(){
         input = textField.getText();
-        if (input.equals("bad")){
-            JOptionPane.showMessageDialog(null, "Seek Medical Attention");
+        if ((input.equals(""))){
+            JOptionPane.showMessageDialog(null, "Hello, is anyone there...", "SymptAid Response", JOptionPane.INFORMATION_MESSAGE, logo);
+        } else {
+            JOptionPane.showMessageDialog(null, "SEEK MEDICAL ATTENTION", "SymptAid Response", JOptionPane.INFORMATION_MESSAGE, logo);
         }
     }
 
