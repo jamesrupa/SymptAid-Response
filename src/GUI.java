@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame implements ActionListener {
 
     ImageIcon logo = new ImageIcon("img/logo.png");
+    Symptoms Symptoms = new Symptoms();
 
     public JFrame frame;
     public JPanel panel;
@@ -65,10 +66,13 @@ public class GUI extends JFrame implements ActionListener {
 
     public void Response(){
         input = textField.getText();
+        // CASE 1
         if ((input.equals(""))){
             JOptionPane.showMessageDialog(null, "Hello, is anyone there...", "SymptAid Response", JOptionPane.INFORMATION_MESSAGE, logo);
-        } else {
-            JOptionPane.showMessageDialog(null, "SEEK MEDICAL ATTENTION", "SymptAid Response", JOptionPane.INFORMATION_MESSAGE, logo);
+        }
+        // CASE 2
+        if (!(input.equals(""))){
+            JOptionPane.showMessageDialog(null, "MEDICAL ATTENTION\n" + Symptoms.Result(), "SymptAid Response", JOptionPane.INFORMATION_MESSAGE, logo);
         }
     }
 
