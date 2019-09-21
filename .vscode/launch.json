@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SymptAidResponse",
+            "request": "launch",
+            "mainClass": "src.SymptAidResponse",
+            "projectName": "SymptAid-Response_83970991"
+        }
+    ]
+}

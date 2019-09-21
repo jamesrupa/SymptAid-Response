@@ -5,36 +5,24 @@ public class Symptoms {
     // VARIABLES
     public boolean condition;
     //          TRUE == SEVERE          FALSE == NON-SEVERE
-    public String result = "";
+    public String displayNONSEV, displaySEV = "";
 
 
     public Symptoms() {
 
-        // LIBRARY OF INFORMATION
-
-        String[] EmergencySymptoms = {"cant breathe", "quick breaths",
-                "short breaths","fatigue", "cold sweat", "chest pain",
-                "stiff muscles", "blind", "blurred vision","double vision",
-                "vertigo", "numb"};
-        String[] UrgentSymptoms = {"blister", "swelling", "melting skin"};
-        String[] MinorSymptoms = {"sneezing", "coughing", "cough", "sore throat"};
-
     }
 
-    public boolean Severity() {
+    public String Display() {
+
+        displaySEV = "URGENT";
+        displayNONSEV = "IF NEEDED";
+
         if (condition) {
-            return true;
+            return displaySEV;
         } else {
-            return false;
+            return displayNONSEV;
         }
-    }
 
-    public String Result() {
-
-        // NEEDS TO DETERMINE THE SEVERITY AND RETURN THAT RESULT
-
-        result = "No Medical Attention Required";
-        return result;
     }
 
 }
